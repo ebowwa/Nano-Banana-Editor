@@ -1,0 +1,9 @@
+# AI and ML dependencies
+ai-proxy-core>=0.4.40
+
+# Video processing dependencies  
+opencv-python>=4.5.0
+ffmpeg-python
+
+# General utilities
+python-dotenv>=0.19.0

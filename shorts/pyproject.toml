@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nano-banana-shorts-editor"
+version = "0.1.0"
+description = "AI-powered video editing system for marketing materials"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    {name = "Elijah Arbee", email = "ec.arbee1@gmail.com"},
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "ai-proxy-core>=0.4.40",
+    "opencv-python>=4.5.0",
+    "python-dotenv>=0.19.0",
+    "pathlib2>=2.3.0; python_version<'3.4'",
+    # "media-processor",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-asyncio>=0.18.0",
+    "flake8>=4.0.0",
+    "black>=22.0.0",
+]
+
+[project.scripts]
+nano-banana-editor = "main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["*"]
+
+[tool.black]
+line-length = 120
+target-version = ['py38']
+
+[tool.flake8]
+max-line-length = 120
+extend-ignore = ["E203", "W503", "W291", "W293", "E501", "F401", "F541", "F841", "E722", "W292"]
+
+# [tool.uv.sources]
+# media-processor = { path = "../media-processor", editable = true }
